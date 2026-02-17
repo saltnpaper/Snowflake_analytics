@@ -1,0 +1,1 @@
+This folder has the .py scripts for the streamlit dashboards created on top of gold layer tables. Each dasboard corresponds to a business usecase listed in readme.md
