@@ -27,6 +27,8 @@ graph LR
     end
 ```
 
+#### Silver layer architecture : Snowflake schema
+![Architecture Diagram](./docs/project_architecture_silver.png)
 
 #### Key Features
 **Medallion Architecture:** Systematic data promotion through Bronze (Raw/Enhanced), Silver (Normalized Star Schema), and Gold (Business Aggregations) layers.
