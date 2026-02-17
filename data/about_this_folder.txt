@@ -1,0 +1,1 @@
+This folder has the csv file that is the raw data used to start ingestion for the pipeline initially
