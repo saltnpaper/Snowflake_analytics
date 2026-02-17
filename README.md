@@ -3,6 +3,8 @@
 Developed as part of the Master’s in Business Analytics (MSBA) program at UT Austin, this project implements an end-to-end data engineering pipeline using a Medallion Architecture in Snowflake. The pipeline transforms raw Disney+ content data into actionable business insights while leveraging Generative AI (Snowflake Cortex) for sentiment analysis, automated summarization, and semantic search.
 
 #### System Architecture 
+
+```mermaid
 graph LR
     subgraph Ingestion
     A[(S3 / CSV)] --> B[Bronze: Raw]
@@ -14,8 +16,8 @@ graph LR
     end
 
     subgraph "Transformation (CDC)"
-    C -- "Snowflake Stream" --> D[Silver: Star Schema]
-    D -- "Stored Procedures" --> E[Gold: Business Views]
+    C -->|Snowflake Stream| D[Silver: Snowflake Schema]
+    D -->|Stored Procedures| E[Gold: Business Views]
     end
 
     subgraph "Consumption"
@@ -23,6 +25,8 @@ graph LR
     E --> G[Cortex Analyst]
     C --> H[Cortex Search]
     end
+```
+
 
 #### Key Features
 **Medallion Architecture:** Systematic data promotion through Bronze (Raw/Enhanced), Silver (Normalized Star Schema), and Gold (Business Aggregations) layers.
